@@ -1,0 +1,5 @@
+- отсутствует адаптивность, появляется горизонтальный скрол на меньшем разрешении экрана (на мобилке)
+https://tproger.ru/translations/responsive-web-design-tips/
+
+- https://validator.w3.org/nu/#textarea
+выдаёт ошибки на html разметку

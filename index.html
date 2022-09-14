@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--lang=ru контент на русском-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,8 +11,15 @@
 <body>
     <div class="summary_canvas">
         <div class="summary_head">
+<!--            block1 и block2 и т.д. - плохая идея, блоки могут меняться местами-->
+<!--            неоднократно, плюс не отображают сути содержимого, что находится внутри того или иного класса-->
             <div class="block1">
+
+<!--                это h1, заголовок страницы-->
                 <p class="fio">Арянов Владислав Александрович</p>
+
+                <!--                здесь и далее ниже по всему HTML
+это не параграфы, это div теги, параграфы используются для статей, является нарушением семантики-->
                 <p class="job">СТУДЕНТ</p>
                 <p class="info">Дата рождения: 09.07.1999</p>
                 <p class="info">Город: Саранск</p>
@@ -19,6 +27,13 @@
                 <p class="info">Email: aryanov.vladislav@gmail.com</p>
             </div>
             <div class="block2">
+<!--                foto -> photo / avatar / userpic-->
+<!--                alt тег обязателен к контентным картинкам-->
+
+<!--                фотка весит нереально много-->
+<!--                1) она больше в размерах чем используется-->
+<!--                2) подойдёт jpg качество-->
+<!--                3) её можно прогнать через оптимизатор https://tinyjpg.com/-->
                 <img src="img/foto.png" class="image">
             </div>
         </div>
@@ -52,7 +67,12 @@
                     <td class="column1"><p class="text_column1">Откуда узнали про курс</p></td>
                     <td class="column2"><p class="text_column2">Интернет, друзья</p></td>
                 </tr>
+<!--                более того я вижу что классы post1-7 не использованы в вёрстке,-->
+<!--                их именование - лишнее-->
                 <tr class="post7">
+<!--                    именование text_column1 и text_column2 плохое,-->
+<!--                    как я указывал выше-->
+<!--                    в твоём случае это .heading и .description-->
                     <td class="column1"><p class="text_column1">Ссылка на гитхаб</p></td>
                     <td class="column2"><p class="text_column2"><a href="https://github.com/vladislavAA">GitHUB</a></p></td>
                 </tr>
