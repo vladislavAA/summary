@@ -1,52 +1,48 @@
 body {
-    /*здесь и далее вместо rgb используется hex всегда за редким исключением, т.е. это #F1EDB5*/
-    background-color: rgb(241, 237, 181);
+    background-color: #F1EDB5;
 }
 
 .summary_canvas {
-    /*есть много устройств, которые будут меньше 480px до сих пор у pixel5 например 393px */
-    /*это ограничение по ширине ломает адаптивность вёрстки,*/
-    /*обычно используют max-width*/
-    width: 900px;
-    /*это неверное предположение, кол-во контента регулирует высоту вёрстки, правило не повлияет ни на что в твоём случае*/
-    height: 900px;
-    background-color: rgb(255, 255, 255);
+    max-width: 900px;
+    background-color: #FFFFFF;
     margin-left: auto;
     margin-right: auto;
 }
 
 .summary_head {
     display: flex;
+    padding-left: 70px;
+    padding-right: 70px;
 }
 
-/*идея с margin здесь понятная, но можно лучше через padding у родительского блока,
- я вижу одинаковый внутренний белый отступ со всех сторон, не надо дублировать margin у отдельных блоков */
-.block1 {
+.summary_info {
     flex: 1;
-    margin-left: 70px;
 }
 
-.block2 {
+.job {
+    padding-bottom: 25px;
+}
+
+.summary_photo {
     margin-left: auto;
     margin-top: 30px;
-    margin-right: 70px;
 }
 
 .fio {
     text-decoration: underline;
     text-decoration-thickness: 3px;
-    text-decoration-color: rgb(19, 115, 145);
+    text-decoration-color: #137391;
     font-size: 25px;
     font-weight: bold;
 }
 
 .job {
     font-weight: bold;
-    color: rgb(66, 71, 71);
+    color: #424747;
 }
 
 .info {
-    color:rgb(117, 117, 117);
+    color:#757575;
     margin: 0;
 }
 
@@ -54,6 +50,8 @@ body {
     border-radius: 150px;
     width: 170px;
     height: 170px;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .summary_table {
@@ -63,17 +61,14 @@ body {
 }
 
 .column1 {
-    background-color: rgb(198, 231, 245);
+    background-color: #C6E7F5;
     text-align: right;
     vertical-align: text-top;
     width: 230px;
+    height: 100px;
 }
 
-.post1 {
-    height: 130px;
-}
-
-.text_column1 {
+.heading {
     font-size: 18px;
     font-weight: bold;
     text-decoration: underline;
@@ -85,10 +80,10 @@ body {
     vertical-align: text-top;
 }
 
-.text_column2 {
+.description {
     font-size: 16px;
     font-weight: bold;
-    color: rgb(64, 146, 182);
+    color: #4092B6;
     margin-left: 15px;
 }
 
@@ -98,21 +93,87 @@ body {
     margin-left: 15px;
 }
 
-.post3 {
-    height: 80px;
-}
-
-.post4 {
-    height: 80px;
-}
-
-/*таким стилем ты сделал ссылки не отличимыми от текста,*/
-/*причем ты применил это ко всем ссылкам, а надо делать через .link */
-/*и указывать конкретные классы в html*/
-/*это стоит подробнее почитать в БЭМ методологии*/
-a {
-    color: rgb(64, 146, 182);
+.link_github:link {
+    color: #e08b29;
     font-family: helvetica;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.link_github:hover {
+    color: #07cc11;
+    font-family: helvetica;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+    .summary_canvas {
+        width: 100%;
+    }
+
+    .summary_table {
+        width: 80%;
+        overflow:auto;
+    }
+
+    .column2 {
+        width: 700px;
+    }
+}
+
+@media screen and (max-width: 515px) {
+    .summary_canvas {
+        width: 100%;
+    }
+
+    .image {
+        width: 50%;
+        height: 50%;
+        border-radius: 100%;
+        margin-left: 40px;
+    }
+
+    .summary_head {
+        padding-right: 0px;
+        justify-content: left;
+    }
+
+    .summary_table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+@media  screen and (max-width: 440px) {
+    .summary_canvas {
+        width: 100%;
+    }
+
+    .summary_table {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .summary_head {
+        padding-left: 0px;
+    }
+}
+
+@media screen and (max-width: 875px) {
+    .summary_canvas {
+        width: 100%;
+    }
+
+    .summary_table {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .summary_head {
+        padding-left: 0px;
+    }
 }
